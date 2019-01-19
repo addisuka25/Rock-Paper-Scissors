@@ -16,16 +16,31 @@
         <img src="images/RockPaperScissors.jpg" alt="rock-paper-scissor">
 
         <p>Enter the Web Console with the keyboard shortcut
-         <strong>CTRL</strong> + <strong>SHIFT</strong> + <strong>J</strong> on <br>Linux and Windows,
-          or <strong>COMMAND</strong> + <strong>OPTION </strong> + <strong> J </strong> on macOS. </p>
+         <strong>CTRL</strong> + <strong>SHIFT</strong> + <strong>J</strong> or <strong>k</strong> <br> on Linux and Windows,
+          or <strong>COMMAND</strong> + <strong>OPTION </strong> + <strong> J </strong> on macOS and<br> then 
+         Click on <strong>Start Game</strong>  </p>
+        
+         <div class="buttons">
+                <button onclick="game()"> Start Game</button> 
+                <button onclick="console.clear()"> Clear</button>
+        </div>
+          
+
+
     </div>
 
+
+
   <script>
+
+        let playerScore = 0;
+        let computerScore = 0;
+        let round = 1;
+
       
-      function game(){
 
           
-      }
+     
       
 
       function computerPlay() 
@@ -63,46 +78,104 @@
      {
          playerSelection = playerSelection.toLowerCase();
 
-    if (playerSelection == "rock" & computerSelection == "scissors") {
+    if (playerSelection === "rock" && computerSelection === "scissors") {
+       
+        playerScore++;
+        console.log("You Win! Rock beats Scissors.");
+    
 
-        console.log("You Win! Rock beats Scissors");
+        } else if (playerSelection === "scissors" && computerSelection === "rock")  {
 
-        } else if (playerSelection == "scissors" & computerSelection == "rock")  {
+        computerScore++;
 
-        console.log("You Lose! Rock beats Scissors");
+        console.log("You Lose! Rock beats Scissors.");
+    
 
-        } else if (playerSelection == "rock" & computerSelection == "paper") {
+        } else if (playerSelection === "rock" && computerSelection === "paper") {
 
-        console.log("You Lose! Paper beats Rock");
-
-        } else if (playerSelection == "paper" & computerSelection == "rock") {
-
-        console.log("You Win! Paper beats Rock");
-
-        } else if (playerSelection == "paper" & computerSelection == "scissors") {
-
-            console.log("You Lose! Scissor beats Paper");
-
-        } else if (playerSelection == "scissors" & computerSelection == "paper") {
-
-        console.log("You Win! Scissor beats Paper");
-
-        }  
+        computerScore++;
+        console.log("You Lose! Paper beats Rock.");
         
-         else {
+
+        } else if (playerSelection === "rock" && computerSelection === "rock") {
         
-        console.log("Its a Draw Game");
+        console.log("It's a draw! Rock vs Rock.");
+
+        } 
+        
+        
+        
+        
+        else if (playerSelection === "paper" && computerSelection === "rock") {
+
+        playerScore++;
+        console.log("You Win! Paper beats Rock.");
+        
+
+        } else if (playerSelection === "paper" && computerSelection === "scissors") {
+
+            computerScore++;
+            console.log("You Lose! Scissor beats Paper.");
+        
+
+        }  else if (playerSelection === "paper" && computerSelection === "paper") {
+
+        
+        console.log("It's a draw! Paper vs Paper.");
+
+
+        } else if (playerSelection === "scissors" && computerSelection === "paper") {
+
+        playerScore++;
+        console.log("You Win! Scissor beats Paper.");
+    
+
+        }  else if (playerSelection === "scissors" && computerSelection === "scissors") {
+
+        console.log("It's a draw! scissors vs scissors.");
+
+
+        } else {
+        
+            return "ERROR";
         }
 
     }
 
-const playerSelection = 'rock';
+
 const computerSelection = computerPlay();
 
 
-console.log(playRound(playerSelection, computerSelection));
 
-   
+    
+
+     function game() {
+
+            while (round <= 5) {
+                
+                console.log(`Current score: Player ${playerScore}, Computer ${computerScore}`);
+                console.log(`Round: ${round} `);
+                round++;
+                let playerSelection = prompt("Please Choose Your Weapon rock, paper, or scissors.");
+                
+                 console.log(playRound(playerSelection, computerSelection)); 
+                
+                
+            }
+
+             if (playerScore > computerScore) {
+                console.log("Player Wins Match! " + playerScore + " : " + computerScore) ;
+                
+                } else if (playerScore < computerScore) {
+                console.log("Computer Wins Match! " + playerScore + " : " + computerScore);
+                 } else {
+                console.log("Match is a draw! " + playerScore + " : " + computerScore);
+                }       
+        
+        }
+
+
+
 
   </script>  
 
