@@ -47,27 +47,13 @@
 
       {
 
-          let computer ;
+          let weapon = ['rock' , 'paper' , 'scissors'];
 
-          let randomGeneratedNumber = Math.floor(Math.random() * 3) + 1 ;
 
-          if (randomGeneratedNumber == 1) 
-          {
+          let randomGeneratedNumber =  weapon[Math.floor(Math.random() * weapon.length)];
 
-              return computer = "rock";
+          return randomGeneratedNumber;
 
-          } else if (randomGeneratedNumber == 2) 
-          
-          {
-             
-              return computer = "paper";
-              
-          } else 
-          
-          {
-              
-             return computer = "scissors";
-          }
 
         
       }
@@ -101,6 +87,8 @@
         
         console.log("It's a draw! Rock vs Rock.");
 
+        round--;
+
         } 
         
         
@@ -122,6 +110,7 @@
 
         
         console.log("It's a draw! Paper vs Paper.");
+        round--;
 
 
         } else if (playerSelection === "scissors" && computerSelection === "paper") {
