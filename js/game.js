@@ -8,6 +8,7 @@ function game() {
 
     while (roundsPlay != 6 ) {
         
+       
         
 // this function return either rock, paper or scissors
 
@@ -28,23 +29,23 @@ function playRound(playerSelection, computerSelection) {
     switch (playerSelection + computerSelection) {
 
         case 'rock' + 'scissors':
-
-                console.log( "You Win! Rock beats Scissors" );
                 playerScore ++;
+                console.log( "You Win! Rock beats Scissors" );
+                
                 break;
 
 
         case 'paper' + 'rock':
-
-                console.log( "You Win! Paper beats Rock" );
                 playerScore ++;
+                console.log( "You Win! Paper beats Rock" );
+               
                 break;
 
 
         case 'scissors' + 'paper':
-
-                console.log( "You Win! Scissors beats Paper" );
                 playerScore ++;
+                console.log( "You Win! Scissors beats Paper" );
+                
                 break;
             
         
@@ -85,16 +86,19 @@ function playRound(playerSelection, computerSelection) {
 }
 
 
+        
         const playerSelection = prompt("Choose Your Weapon :-  Rock Paper or Scissors ").toLowerCase();
-
-        const computerSelection = computerPlay()
-       
-        console.log(`Rounds: ${roundsPlay}  Computer Score: ${computerScore}  Player Score: ${playerScore}`)
+        const computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));
-    // console.log(`Rounds: ${rounds}  Computer Score: ${computerScore}  Player Score: ${playerScore}`)
 
         roundsPlay ++;
+
+        console.log(`Rounds: ${roundsPlay}  Computer Score: ${computerScore}  Player Score: ${playerScore}`)
     }
+
+    
+
+    
 
 }
 
