@@ -30,42 +30,43 @@ function playRound(playerSelection, computerSelection) {
 
         case 'rock' + 'scissors':
                 playerScore ++;
-                console.log( "You Win! Rock beats Scissors" );
+                console.log( `You Win! YourWeapon ${playerSelection} Beats Computer'sWeapon ${computerSelection}` );
                 
                 break;
 
 
         case 'paper' + 'rock':
                 playerScore ++;
-                console.log( "You Win! Paper beats Rock" );
-               
+              
+                console.log( `You Win! YourWeapon ${playerSelection} Beats Computer'sWeapon ${computerSelection}` );
                 break;
 
 
         case 'scissors' + 'paper':
                 playerScore ++;
-                console.log( "You Win! Scissors beats Paper" );
+             
+                console.log( `You Win! YourWeapon ${playerSelection} Beats Computer'sWeapon ${computerSelection}` );
                 
                 break;
             
         
 
         case 'scissors' + 'rock':
-
-                console.log( "You Lose! Rock beats Scissors" );
                 computerScore ++;
+            
+                console.log( `You Lose! YourWeapon ${playerSelection} Loses To Computer'sWeapon ${computerSelection}` );
                 break;
 
         case 'rock' + 'paper':
-
-                console.log( "You Lose! Paper beats Rock" );
                 computerScore ++;
+                
+                console.log( `You Lose! YourWeapon ${playerSelection} Loses To Computer'sWeapon ${computerSelection}` );
                 break;
 
         case 'paper' + 'scissors':
-
-                console.log( "You Lose! Scissors beats Paper" );
                 computerScore ++;
+              
+                console.log( `You Lose! YourWeapon ${playerSelection} Loses To Computer'sWeapon ${computerSelection}` );
                 break;
               
         
@@ -73,7 +74,8 @@ function playRound(playerSelection, computerSelection) {
         case 'paper' + 'paper':
         case 'scissors' + 'scissors':
 
-                console.log( `Its a Draw! ${playerSelection} Vs ${computerSelection}` );
+               
+                console.log( `Its a Draw! YourWeapon ${playerSelection} Vs Computer'sWeapon ${computerSelection}` );
                 break;
     
         default:
